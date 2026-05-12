@@ -895,6 +895,7 @@ class AgentLoop:
 
         active_session_key = session.key if session else session_key
         file_state_token = bind_file_states(self._file_state_store.for_session(active_session_key))
+
         try:
             result = await self.runner.run(AgentRunSpec(
                 initial_messages=initial_messages,
